@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         'Black': '#1E2832',
-        'primaryBG': '#1e28320d'
+        'primaryBG': '#1e28320d',
       },
       fontFamily: {
         'primary': ['Roboto', 'sans-serif'],
