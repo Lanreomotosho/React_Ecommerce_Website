@@ -6,7 +6,7 @@ function App() {
 
   return (
    <>
-   <h1>Lanre Omotosho</h1>
+   <h1 className='bg-Black'>Lanre Omotosho</h1>
    </>
   )
 }
