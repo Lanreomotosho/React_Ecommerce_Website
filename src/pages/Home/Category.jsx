@@ -47,11 +47,10 @@ const Category = () => {
 <Link to="/"> <img src="/public/images/image5.png" alt='' className='w-full hover:scale-105 transition-all duration-200'/></Link>
 </div>
 </div>
- 
   </div>
   </div>
   )
 }
 
 
-export default Category
+export default Category;

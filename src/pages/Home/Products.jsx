@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { FaFilter } from "react-icons/fa"
+import { FaFilter } from "react-icons/fa";
+import Cards from '../../components/Cards';
 
 const Products = () => {
-  const [Products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() =>  {
     const fetchData = async () => {
       try{
-        const response = await fetch("products.json");
-        const date = await response.json();
-       console.log(data)
+        const response = await fetch("/products.json");
+        const data = await response.json();
+       //console.log(data)
+       setProducts(data)
        // setProducts(data)
       } catch (error) {
         console.log("Error fetching data:", error)
       }
     }
-     
     fetchData();
   }, [])
 
-  console.log(Products)
+  console.log(products)
   return (
     <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mb-12'>
     <h2 className='title'>
@@ -52,10 +53,10 @@ const Products = () => {
   </select>
 </div>
 </div>
- 
+
+<Cards filteredItems={products}/>
     </div>
       </div>
-  )
-}
-  
-export default Products
+  );
+};
+export default Products;
