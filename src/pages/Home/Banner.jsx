@@ -28,8 +28,6 @@ from various barands here.
     <FaShoppingBag className='inline-flex'/>  
 </button>
     </div>
-
-
 </div>
     </div>
   )
