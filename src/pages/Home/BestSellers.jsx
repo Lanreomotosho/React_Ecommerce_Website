@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,8 +16,10 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 const BestSellers = () => {
     const [products, setProducts] = useState([]);
     useEffect( () => {
-        fetch("products.json").then(res => res.json()).then(data => console.log(data))
+        fetch("products.json").then(res => res.json()).then(data => setProducts(data))
     },  [])
+    const bestSellers = products.filter((item) => item.status === "Best Selers")
+    console.log(bestSellers)
   return (
     <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4'>
        <div className='text-center'>
@@ -32,8 +35,8 @@ const BestSellers = () => {
        {/* best seller products card */}
        <div className='mb-16'>
        <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
+       slidesPerView={4}
+        spaceBetween={10}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -41,19 +44,45 @@ const BestSellers = () => {
         pagination={{
           clickable: true,
         }}
+        breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {
+             bestSellers.map((product) => (
+                <SwiperSlide key={product.id}>
+             <Link to={`/shop/${product.id}`}>
+                <img src={product.images} alt="" className='mx-auto w-full hover:scale-105 transition-all
+                 duration-300'/>
+            </Link>
+            <div className='mt-4 px-4'>
+              <h4 className=' text-base font-semibold mb-2'>
+                {product.title}
+              </h4>
+
+              <div className='flex justify-between'>
+               <p className='text-black/50'>{product.category}</p>
+                 <p className='font-semibold'>${product.price}</p>
+</div>
+            </div>
+                </SwiperSlide>
+             ))
+        }
+        
       </Swiper>
        </div>
 
