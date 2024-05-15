@@ -1,19 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Cards = ({filteredItems}) => {
+const Cards = ({ filteredItems }) => {
   return (
-    <div>
-     {
-       filteredItems.map((item) => (
+    <div className='grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2'>
+     { filteredItems.map((item) => (
         <div key={item.id}>
           <Link to={`/shop/${item.id}`}>
-            <img src={item.image} alt="" />
+            <img src={item.images} alt="" />
             </Link>
-            <div>
-              
+            <div className='mt-4 px-4'>
+              <h4 className=' text-base font-semibold mb-2'>
+                {item.title}
+              </h4>
+
+              <div className='flex justify-between'>
+               <p className='text-black/50'>{item.category}</p>
+                 <p className='font-semibold'>${item.price}</p>
+</div>
+
             </div>
+            
         </div>
+        
        ))
      }
 
