@@ -40,6 +40,20 @@ const Products = () => {
     selectedCategory("all");
   }
 
+  // sorting functionality
+  const handleSortChange = (option) => {
+    setSortOption(option);
+
+    // logic for sorting
+    let sortedItems = [...filterItems];
+   
+    switch (option) {
+      case "A-z":
+         sortedItems.sort((a, b) => a.title.localeCompare(b.title));
+          break;
+    }
+  }
+
 
   return (
     <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mb-12'>
