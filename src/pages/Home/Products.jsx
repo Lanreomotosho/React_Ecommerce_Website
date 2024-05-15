@@ -3,7 +3,10 @@ import { FaFilter } from "react-icons/fa";
 import Cards from '../../components/Cards';
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]); 
+  const [filteredItems, setfilteredItems] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [sortOption, setSortOption] = useState("default");
 
   useEffect(() =>  {
     const fetchData = async () => {
@@ -12,7 +15,7 @@ const Products = () => {
         const data = await response.json();
        //console.log(data)
        setProducts(data)
-       // setProducts(data)
+      setfilteredItems(data)
       } catch (error) {
         console.log("Error fetching data:", error)
       }
@@ -20,7 +23,24 @@ const Products = () => {
     fetchData();
   }, [])
 
-  console.log(products)
+  //console.log(products)
+
+  // filtering function
+  const filterItems = (category) => {
+    const filtered = category === "all" ? (products) : products.filter((item) => item.category ===  category);
+
+    setfilteredItems(filtered);
+    setSelectedCategory(category);
+  }
+
+
+  //show all products
+  const showAll = () => {
+    setfilteredItems(products);
+    selectedCategory("all");
+  }
+
+
   return (
     <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mb-12'>
     <h2 className='title'>
@@ -33,10 +53,10 @@ const Products = () => {
 
 {/*  all btn */}
 <div className='flex flex-row justify-start md:items-center md:gap-8 gap-4 flex-wrap'>
-  <button>All Products</button>
-<button>Clothing</button>
-<button>Hoodies</button>
-<button>Bag</button>
+  <button onClick={showAll}>All Products</button>
+<button onClick={() => filterItems("Dress")}>Clothing</button>
+<button onClick={() => filterItems("Hoodies")}>Hoodies</button>
+<button onClick={() => filterItems("Bag")}>Bag</button>
 </div>
 
 {/*  sorting options */}
@@ -54,7 +74,7 @@ const Products = () => {
 </div>
 </div>
 
-<Cards filteredItems={products}/>
+<Cards filteredItems={filteredItems}/>
     </div>
       </div>
   );
