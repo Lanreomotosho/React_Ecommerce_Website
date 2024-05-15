@@ -50,8 +50,20 @@ const Products = () => {
     switch (option) {
       case "A-z":
          sortedItems.sort((a, b) => a.title.localeCompare(b.title));
-          break;
-    }
+           break;
+          case "Z-A" :
+            sortedItems.sort((a, b) => b.title.localeCompare(a.title));
+              break;
+            case "Low-to-High" :
+            sortedItems.sort((a, b) => a.price - b.price);
+              break;
+            case "High-to-Low" :
+            sortedItems.sort((a, b) => b.price - a.price);
+            break;
+            default :
+               break;
+    }     
+    setfilteredItems(sortedItems);
   }
 
 
@@ -78,7 +90,14 @@ const Products = () => {
   <div className='bg-black p-2'>
         <FaFilter className='text-white h-4 w-4'/>
   </div>
-  <select className='bg-black text-white px-2 py-1 rounded-sm'>
+
+
+  <select 
+  
+  id="sort"
+  onChange={(e) => handleSortChange(e.target.value)}
+  value={sortOption}
+  className='bg-black text-white px-2 py-1 rounded-sm'>
     <option value="default">Default </option>
     <option value="A-Z">A-Z</option>
     <option value="Z-A">Z-A </option>
