@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Banner } from './pages/Home/Banner.jsx'
+import { SingleProduct } from './pages/Home/SingleProduct.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home/>
+      },
+      {
+        path: "/shop/:id",
+        element: <SingleProduct/>
       }
     ]
   },

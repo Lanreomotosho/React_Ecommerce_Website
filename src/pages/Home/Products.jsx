@@ -20,6 +20,7 @@ const Products = () => {
         console.log("Error fetching data:", error)
       }
     }
+    
     fetchData();
   }, [])
 

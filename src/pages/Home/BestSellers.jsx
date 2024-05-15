@@ -35,7 +35,7 @@ const BestSellers = () => {
        {/* best seller products card */}
        <div className='mb-16'>
        <Swiper
-       slidesPerView={4}
+       slidesPerView={1}
         spaceBetween={10}
         autoplay={{
           delay: 2500,
@@ -50,7 +50,7 @@ const BestSellers = () => {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 40,
             },
             1024: {
