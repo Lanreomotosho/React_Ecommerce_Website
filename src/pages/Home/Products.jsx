@@ -4,7 +4,7 @@ import Cards from '../../components/Cards';
 
 const Products = () => {
   const [products, setProducts] = useState([]); 
-  const [filteredItems, setfilteredItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortOption, setSortOption] = useState("default");
 
@@ -15,7 +15,7 @@ const Products = () => {
         const data = await response.json();
        //console.log(data)
        setProducts(data)
-      setfilteredItems(data)
+      setFilteredItems(data)
       } catch (error) {
         console.log("Error fetching data:", error)
       }
@@ -29,14 +29,15 @@ const Products = () => {
   const filterItems = (category) => {
     const filtered = category === "all" ? (products) : products.filter((item) => item.category ===  category);
 
-    setfilteredItems(filtered);
+    setFilteredItems(filtered);
     setSelectedCategory(category);
   }
 
 
   //show all products
+
   const showAll = () => {
-    setfilteredItems(products);
+    setFilteredItems(products);
     selectedCategory("all");
   }
 
@@ -45,25 +46,26 @@ const Products = () => {
     setSortOption(option);
 
     // logic for sorting
-    let sortedItems = [...filterItems];
+    let sortedItems = [...filteredItems];
    
     switch (option) {
-      case "A-z":
+      case "A-Z":
          sortedItems.sort((a, b) => a.title.localeCompare(b.title));
            break;
           case "Z-A" :
             sortedItems.sort((a, b) => b.title.localeCompare(a.title));
               break;
-            case "Low-to-High" :
+            case "low-to-high" :
             sortedItems.sort((a, b) => a.price - b.price);
               break;
-            case "High-to-Low" :
+            case "high-to-low" :
             sortedItems.sort((a, b) => b.price - a.price);
             break;
             default :
                break;
-    }     
-    setfilteredItems(sortedItems);
+    }    
+
+    setFilteredItems(sortedItems);
   }
 
 
@@ -93,7 +95,6 @@ const Products = () => {
 
 
   <select 
-  
   id="sort"
   onChange={(e) => handleSortChange(e.target.value)}
   value={sortOption}
