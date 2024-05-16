@@ -5,6 +5,7 @@ import Products from './Products';
 import Collections from './Collections';
 import BestSellers from './BestSellers';
 import Newletters from './Newletters';
+import Footer from '../../components/Footer';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <Collections/>
       <BestSellers/>
       <Newletters/>
+      <Footer/>
     </div>
   )
 }
