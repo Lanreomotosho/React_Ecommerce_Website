@@ -13,19 +13,29 @@ const Footer = () => {
           {/* company info */}
           <div className="md:w-[400px]">
             <Link to="/">
-              <img src="/logo.svg" alt="" />
+              <img src="/logo.png" alt="" />
             </Link>
             <p className="my-8 text-Black/75">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </p>
             <div className="flex items-center gap-6">
-              <FaFacebookF className="w-5 h-5 cursor-pointer hover:text-orange-500" />
-              <FaTwitter className="w-5 h-5 cursor-pointer hover:text-orange-500" />
-              <FaLinkedinIn className="w-5 h-5 cursor-pointer hover:text-orange-500" />
-              <FaInstagram className="w-5 h-5 cursor-pointer hover:text-orange-500" />
+              
+        <a href='https://web.facebook.com/olanrewaju.omotosho.12/'>
+        <FaFacebookF className="w-5 h-5 cursor-pointer hover:text-orange-500"/>
+              </a>
+              <a href='https://twitter.com/Lanre__omotosho'>
+        <FaTwitter className="w-5 h-5 cursor-pointer hover:text-orange-500"/>
+              </a>
+             <a href='https://www.linkedin.com/in/lanreomotosho/'>
+        <FaLinkedinIn className="w-5 h-5 cursor-pointer hover:text-orange-500"/>
+              </a>
+              <a href='https://www.instagram.com/lanre__omotosho/'>
+        <FaInstagram className="w-5 h-5 cursor-pointer hover:text-orange-500"/>
+              </a>
             </div>
           </div>
+
 
           {/* Catalog */}
           <div className="text-Black">
