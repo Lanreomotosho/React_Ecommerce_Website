@@ -1,17 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import brand1 from "/public/images/brand/brand1.png"
+import brand2 from "/public/images/brand/brand2.png"
+
 
 
 // Run only once after component mount
 
 
 const companyLogo = [
-    {id: 1, img: "/public/images/brand/01.png"},
-    {id: 2, img: "/public/images/brand/02.png"},
-    {id: 3, img: "/public/images/brand/03.png"},
-    {id: 4, img: "/public/images/brand/04.png"},
-    {id: 5, img: "/public/images/brand/05.png"},
+    {id: 1, img: "/public/images/brand/brand1.png"},
+    {id: 1, img: "/public/images/brand/brand2.png"},
+    {id: 1, img: "/public/images/brand/brand3.png"},
+    {id: 1, img: "/public/images/brand/brand4.png"},
+    {id: 1, img: "/public/images/brand/brand5.png"},
 ]
 
 const Category = () => {
