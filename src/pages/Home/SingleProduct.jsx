@@ -19,9 +19,10 @@ export const SingleProduct = () => {
           } catch (error) {
             console.log("Error fetching data:", error)
           }
-        }
+        };
 
         fetchData();
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }, [id])
 
     const {title, category, price, images, status} = products;
@@ -29,7 +30,11 @@ export const SingleProduct = () => {
   return (
     <div className='mt-28 max-w-screen-2xl container mx-auto xl:px-28 px-4'>
         <div className='p-3 max-w-7x1 m-auto'>
-            <div className='mt-6 sm:mt-10'>
+            <div className='mt-5'>
+                <a href='/' className='text-gray-600'>Home</a>
+                <a href='/shop' className='font-bold text-black'> / shop</a>
+            </div>
+            <div className='mt-2 sm:mt-10'>
                     <div className='grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6 h-max'>
                     <div>
                         <img src={images} alt="" className='w-full'/>
