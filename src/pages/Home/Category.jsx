@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import brand1 from "/public/images/brand/brand1.png"
 import brand2 from "/public/images/brand/brand2.png"
+import brand3 from "/public/images/brand/brand3.png"
+import brand4 from "/public/images/brand/brand4.png"
 
 
 
@@ -17,7 +19,15 @@ const companyLogo = [
     {id: 1, img: "/public/images/brand/brand5.png"},
 ]
 
+
+
+
+
+
 const Category = () => {
+
+  console.log(brand1, brand2, brand3, brand4);
+
   return (
     <div className='max-w-screen-2xl mx-auto container xl:px-28 px-4 py-28'>
   {/* brand logo */}

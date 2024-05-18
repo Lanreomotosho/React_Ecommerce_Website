@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { FaFilter } from "react-icons/fa";
 import Cards from '../../components/Cards';
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
+
+function Animation() {
+  useEffect(() => {
+    Aos.init();
+  }, [])
+
+}
 
 const Products = () => {
   const [products, setProducts] = useState([]); 
@@ -71,7 +81,7 @@ const Products = () => {
 
 
   return (
-    <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mb-12'>
+    <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mb-12 data-aos = "fade-right" ' >
     <h2 className='title'>
       Or subscribe to the newsletter
     </h2>
