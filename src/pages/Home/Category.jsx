@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-import brand1 from "/public/images/brand/brand1.png"
-import brand2 from "/public/images/brand/brand2.png"
-import brand3 from "/public/images/brand/brand3.png"
-import brand4 from "/public/images/brand/brand4.png"
+import brand1 from "/public/images/brand/brand1.png";
+import brand2 from "/public/images/brand/brand2.png";
+import brand3 from "/public/images/brand/brand3.png";
+import brand4 from "/public/images/brand/brand4.png";
+import brand5 from "/public/images/brand/brand5.png";
 
 
 
@@ -13,10 +14,10 @@ import brand4 from "/public/images/brand/brand4.png"
 
 const companyLogo = [
     {id: 1, img: "/public/images/brand/brand1.png"},
-    {id: 1, img: "/public/images/brand/brand2.png"},
-    {id: 1, img: "/public/images/brand/brand3.png"},
-    {id: 1, img: "/public/images/brand/brand4.png"},
-    {id: 1, img: "/public/images/brand/brand5.png"},
+    {id: 2, img: "/public/images/brand/brand2.png"},
+    {id: 3, img: "/public/images/brand/brand3.png"},
+    {id: 4, img: "/public/images/brand/brand4.png"},
+    {id: 5, img: "/public/images/brand/brand5.png"},
 ]
 
 
@@ -26,7 +27,6 @@ const companyLogo = [
 
 const Category = () => {
 
-  console.log(brand1, brand2, brand3, brand4);
 
   return (
     <div className='max-w-screen-2xl mx-auto container xl:px-28 px-4 py-28'>
@@ -34,7 +34,12 @@ const Category = () => {
   <div className='flex items-center justify-around flex-wrap gap-4 py-5'>
    {
     companyLogo.map(({id, img}) => (
-     <div key={id}><img src={img} alt='' />
+     <div key={id}>
+      <img src={brand1} alt='brand1' />
+      <img src={brand2} alt='brand2' />
+      <img src={brand3} alt='brand3' />
+      <img src={brand4} alt='brand4' />
+      <img src={brand5} alt='brand5' />
     </div>
     ))
         }
