@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 
 
 const Collections = () => {
@@ -6,7 +7,8 @@ const Collections = () => {
     <div className='bg-[url("/images/collections.png")] bg-cover  bg-center bg-no-repeat
     xl:px-28 px-4 my-20'>
         <div className='h-[580px] flex justify-between md:flex-row items-center'>
-         <div className='md:w-1/2'> </div>
+         <div className='md:w-1/2'> 
+         </div>
          <div className='md:w-1/2'>
             <img src="/images/Zara.png" alt="" />
             <p className='tect-lg  text-white capitalize my-8 md:w-2/3 leading-[32px]'> 
