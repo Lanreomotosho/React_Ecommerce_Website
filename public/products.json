@@ -4,7 +4,7 @@
        "title":"Adicolor Classics Joggers",
        "category": "Dress",
        "price": 63.85,
-        "images":"/public/images/Product1.png",
+        "images":"public/images/product1.png",
         "status": "Best Selers"
     },
     {
@@ -12,7 +12,7 @@
        "title":"Nike Sportswear Futura Luxe",
        "category": "Bag",
        "price": 130.00,
-       "images":"/public/images/Product2.png",
+       "images":"/public/images/product2.png",
        "status": "Best Selers"
     },
     {
@@ -20,7 +20,7 @@
        "title":"Geometric print Scarf",
        "category": "Dress",
        "price": 53.00,
-       "images":"/public/images/Product3.png",
+       "images":"/public/images/product3.png",
        "status": "Best Selers"
     },
     {
@@ -28,7 +28,7 @@
        "title":"Yellow Reserved Hoodie",
        "category": "Hoodies",
        "price": 63.85,
-       "images":"/public/images/Product4.png",
+       "images":"/public/images/product4.png",
        "status": "New Arriaval"
     },
     {
@@ -36,7 +36,7 @@
        "title":"Basic Dress Green",
        "category": "Dress",
        "price": 236.00,
-       "images":"/public/images/Product5.png",
+       "images":"/public/images/product5.png",
        "status": "New Arriaval"
     },
     {
@@ -44,7 +44,7 @@
        "title":"Nike Air Zoom Pegasus",
        "category": "Shoe",
        "price": 198.00,
-       "images":"/public/images/Product6.png",
+       "images":"/public/images/product6.png",
        "status": "Best Selers"
     },
     {
@@ -52,7 +52,7 @@
        "title":"Nike Repel Miler",
        "category": "Hoodies",
        "price": 120.50,
-       "images":"/public/images/Product7.png",
+       "images":"/public/images/product7.png",
        "status": "Best Selers"
     },
     {
@@ -60,23 +60,14 @@
        "title":"Nike Sportswear Futura Luxe",
        "category": "Glasses",
        "price": 160.00,
-       "images":"/public/images/Product8.png"
+       "images":"/public/images/product8.png"
     },
-   
     {
         "id":9,
        "title":"Nike Sportswear Futura Luxe",
        "category": "Bag",
        "price": 130.00,
-       "images":"/public/images/Product9.jpg",
-       "status": "Best Selers"
-    },
-    {
-        "id":10,
-       "title":"Nike Sportswear Futura Luxe",
-       "category": "Bag",
-       "price": 130.00,
-       "images":"/public/images/Product10.jpg",
+       "images":"/public/images/product9.jpg",
        "status": "Best Selers"
     }
 
